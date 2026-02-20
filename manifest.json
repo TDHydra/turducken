@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Reptyle Auto Downloader",
+  "version": "2.0",
+  "description": "Automatically extracts metadata, downloads highest quality video, cleans names, and resets.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://app.reptyle.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://app.reptyle.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
